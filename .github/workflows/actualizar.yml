@@ -19,7 +19,7 @@ jobs:
           node-version: '18'
 
       - name: Ejecutar script
-        run: node ejecutador.js
+        run: node .github/workflows/ejecutador.js
 
       - name: Commit cambios
         run: |
