@@ -1,0 +1,30 @@
+name: Actualizar indice.json
+
+on:
+  push:   # Se activa con cualquier cambio en el repo
+    branches:
+      - main
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Ejecutar script
+        run: node ejecutador.js
+
+      - name: Commit cambios
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add indice.json
+          git commit -m "Bot: actualizar indice.json"
+          git push
