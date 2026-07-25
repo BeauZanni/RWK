@@ -1,7 +1,7 @@
 name: Actualizar indice.json
 
 on:
-  push:   # Se activa con cualquier cambio en el repo
+  push:
     branches:
       - main
 
