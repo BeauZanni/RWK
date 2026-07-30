@@ -1,9 +1,12 @@
 name: Actualizar indice.json
 
 on:
-  push:
+  push:  
     branches:
       - main
+
+permissions:
+  contents: write
 
 jobs:
   actualizar:
@@ -26,5 +29,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add indice.json
-          git commit -m "Bot: actualizar indice.json"
+          git commit -m "Bot: actualizar indice.json" || echo "No hay cambios en indice.json"
           git push
