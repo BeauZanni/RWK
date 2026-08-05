@@ -1,4 +1,4 @@
-fetch('indice.json')
+fetch('registro.json')
   .then(r => r.json())
   .then(lista => {
     const tabla = document.getElementById('tabla');
