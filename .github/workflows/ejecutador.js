@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const carpeta = path.join(process.cwd(), 'fichas');
-const archivoIndice = path.join(process.cwd(), 'indice.json');
+const carpeta = path.join(process.cwd(), '../../fichas');
+const archivoIndice = path.join(process.cwd(), '../../indice.json');
 
 function actualizarIndice() {
   const archivos = fs.readdirSync(carpeta);
